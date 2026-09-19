@@ -155,9 +155,17 @@ def hero(t: Theme) -> Doc:
     W, H = 1200, 372
     d = Doc(W, H, t, f"{C.NAME} — {C.ROLE}", C.TAGLINE)
     x = 56
+    # availability pill, then the discipline line
+    sw = measure(C.STATUS, "mono-md", 12.5, 1.4) + 40
     d.add(frame(d, 0, 0, W, H, 16),
-          f'<circle cx="{x + 3}" cy="78.5" r="3" fill="{t.accent}"/>',
-          label(d, x + 16, 83, "DATA ENGINEER  ·  AI SYSTEMS"),
+          f'<rect x="{x + .5}" y="62.5" width="{fmt(sw - 1)}" height="29" rx="14.5" fill="{t.ok}" fill-opacity=".1" '
+          f'stroke="{t.ok}" stroke-opacity=".45"/>',
+          f'<circle cx="{x + 16}" cy="77" r="4" fill="{t.ok}" opacity="0">'
+          f'<animate attributeName="r" values="4;11" dur="2.4s" repeatCount="indefinite"/>'
+          f'<animate attributeName="opacity" values=".5;0" dur="2.4s" repeatCount="indefinite"/></circle>',
+          f'<circle cx="{x + 16}" cy="77" r="4" fill="{t.ok}"/>',
+          label(d, x + 28, 81.5, C.STATUS, t.ok, 12.5),
+          label(d, x + sw + 16, 81.5, C.EYEBROW),
           d.text(x - 4, 198, C.NAME, "serif", 108, t.text, ls=-1),
           d.text(x, 246, C.ROLE, "sans-md", 24, t.text, ls=-0.2))
     tag, _ = d.paragraph(x, 286, C.TAGLINE, 18, 690, 28)
@@ -715,9 +723,9 @@ def activity(t: Theme, st: dict) -> Doc:
 
 def footer(t: Theme) -> Doc:
     W, H = 1200, 178
-    d = Doc(W, H, t, "Let's build AI that shows its work.", f"Contact: {C.EMAIL} · {C.LINKEDIN}")
+    d = Doc(W, H, t, "Let's build software that shows its work.", f"Contact: {C.EMAIL} · {C.LINKEDIN}")
     d.add(rule(d, 0, 1, W, t.stroke2),
-          d.text(W / 2, 92, "Let's build AI that shows its work.", "serif-i", 48, t.text, anchor="middle"),
+          d.text(W / 2, 92, "Let's build software that shows its work.", "serif-i", 48, t.text, anchor="middle"),
           d.text(W / 2, 134, f"{C.EMAIL}   ·   {C.LINKEDIN}   ·   Sfax, Tunisia", "mono", 14, t.faint,
                  anchor="middle"))
     return d

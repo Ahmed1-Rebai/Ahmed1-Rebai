@@ -3,15 +3,17 @@
 
 LOGIN = "Ahmed1-Rebai"
 NAME = "Ahmed Rebai"
-ROLE = "AI Automation & RAG Systems Engineer"
-TAGLINE = "Evidence-grounded AI, real-time data pipelines, and the CI/CD that ships them."
+ROLE = "Software Engineer"
+TAGLINE = "From cloud infrastructure and CI/CD to data pipelines and grounded AI."
+EYEBROW = "CLOUD  ·  DEVOPS  ·  AI & DATA"
+STATUS = "OPEN TO WORK"
 EMAIL = "rebaiahmed244@gmail.com"
 LINKEDIN = "linkedin.com/in/ahmed-rebai-18506938a"
 
 FACTS = [
     ("BASED IN", "Sfax, Tunisia"),
     ("STUDYING", "Data Engineering, FSS · 2028"),
-    ("FOCUS", "RAG · agents · streaming data"),
+    ("FOCUS", "Cloud · DevOps · AI & data"),
     ("CERTIFIED", "DP-700 · DP-600 · DP-900"),
 ]
 

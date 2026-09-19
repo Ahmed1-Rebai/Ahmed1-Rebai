@@ -4,7 +4,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
-    <img alt="Ahmed Rebai — AI Automation & RAG Systems Engineer. Data Engineering student in Sfax, Tunisia, building evidence-grounded AI, RAG systems and real-time data pipelines." src="assets/hero-dark.svg" width="100%">
+    <img alt="Ahmed Rebai — Software Engineer, open to work. Cloud, DevOps, AI and data. Based in Sfax, Tunisia." src="assets/hero-dark.svg" width="100%">
   </picture>
 </p>
 
@@ -21,10 +21,11 @@
 </p>
 
 <p align="center">
-  I'm a second-year <b>Data Engineering</b> student at the Faculty of Sciences of Sfax who builds AI the way good data
-  pipelines are built: <b>every output traceable to its source, every change tested, every deploy automated.</b>
-  In 2026 I shipped RAG, multi-agent and edge-AI systems across three internships and earned three
-  Microsoft data certifications.
+  I'm a software engineer and second-year <b>Data Engineering</b> student at the Faculty of Sciences of Sfax,
+  working across <b>cloud, DevOps and AI/data</b>. I build systems the way good pipelines are built:
+  <b>every output traceable, every change tested, every deploy automated.</b> In 2026 I shipped RAG, multi-agent
+  and edge-AI systems across three internships and earned three Microsoft data certifications.
+  <b>Open to work</b>, so let's talk.
 </p>
 
 <p align="center">
@@ -195,6 +196,6 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/footer-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/footer-light.svg">
-    <img alt="Let's build AI that shows its work. rebaiahmed244@gmail.com · linkedin.com/in/ahmed-rebai-18506938a · Sfax, Tunisia" src="assets/footer-dark.svg" width="100%">
+    <img alt="Let's build software that shows its work. rebaiahmed244@gmail.com · linkedin.com/in/ahmed-rebai-18506938a · Sfax, Tunisia" src="assets/footer-dark.svg" width="100%">
   </picture>
 </p>
