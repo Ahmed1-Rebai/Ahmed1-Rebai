@@ -660,15 +660,20 @@ def activity(t: Theme, st: dict) -> Doc:
     pitch = (X1 - X0) / len(weeks)
     cell = pitch * 0.8
     top = 158
-    seen = set()
+    months: dict[str, int] = {}  # month → column of its label (GitHub's rule: the week whose Sunday opens it)
     for c, wk in enumerate(weeks):
         for day in wk:
             parts.append(f'<rect x="{fmt(X0 + c * pitch)}" y="{fmt(top + day["weekday"] * pitch)}" '
                          f'width="{fmt(cell)}" height="{fmt(cell)}" rx="2.5" fill="{t.heat[day["level"]]}"/>')
-            m = day["date"][:7]
-            if day["date"][8:] <= "07" and m not in seen and c < len(weeks) - 1:
-                seen.add(m)
-                parts.append(d.text(X0 + c * pitch, top - 14, S.month_name(day["date"]), "mono", 13, t.faint))
+        sunday = wk[0]["date"]
+        if wk[0]["weekday"] == 0 and sunday[8:] <= "07" and sunday[:7] not in months and c < len(weeks) - 1:
+            months[sunday[:7]] = c
+    # like GitHub, also name the partial month the calendar opens on when there is room for it
+    first = days[0]["date"]
+    if first[:7] not in months and min(months.values(), default=len(weeks)) >= 3:
+        months[first[:7]] = 0
+    for m, c in months.items():
+        parts.append(d.text(X0 + c * pitch, top - 14, S.month_name(m + "-01"), "mono", 13, t.faint))
     grid_bottom = top + 7 * pitch
 
     my = grid_bottom + 30
